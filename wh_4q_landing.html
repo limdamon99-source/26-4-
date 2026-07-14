@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>일본 워킹홀리데이 서류 케어 | 4분기 신청</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --surface-1: #f8f8f8;
+    --surface-2: #f2f2f2;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --text-accent: #2563eb;
+    --text-success: #16a34a;
+    --border: #e5e5e5;
+    --border-strong: #ccc;
+    --border-accent: #93c5fd;
+    --bg-accent: #eff6ff;
+    --radius: 10px;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111;
+      --surface-1: #1c1c1c;
+      --surface-2: #222;
+      --text-primary: #f0f0f0;
+      --text-secondary: #aaa;
+      --text-muted: #666;
+      --text-accent: #60a5fa;
+      --text-success: #4ade80;
+      --border: #2a2a2a;
+      --border-strong: #444;
+      --border-accent: #1d4ed8;
+      --bg-accent: #1e3a5f;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+
+  .tag {
+    display: inline-block;
+    background: var(--bg-accent);
+    color: var(--text-accent);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+
+  .h-main {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .h-bridge {
+    font-size: clamp(16px, 3.5vw, 19px);
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .h-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .divider {
+    border: none;
+    border-top: 0.5px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  h2 { font-size: 18px; font-weight: 500; margin-bottom: 1rem; letter-spacing: -0.2px; }
+  h3 { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
+  p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; }
+
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .check-list li { font-size: 15px; color: var(--text-secondary); display: flex; gap: 10px; align-items: flex-start; }
+  .check-list i { color: var(--text-accent); margin-top: 3px; flex-shrink: 0; font-size: 16px; }
+
+  .reason-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 1rem; }
+  .reason-card { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; }
+  .reason-num { font-size: 11px; font-weight: 600; color: var(--text-accent); letter-spacing: 0.5px; margin-bottom: 6px; }
+  .reason-card h3 { font-size: 14px; margin-bottom: 6px; }
+  .reason-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .service-list { display: flex; flex-direction: column; gap: 10px; margin-top: 1rem; }
+  .service-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; background: var(--surface-1); border-radius: var(--radius); border: 0.5px solid var(--border); }
+  .service-item i { color: var(--text-accent); font-size: 20px; margin-top: 1px; flex-shrink: 0; }
+  .service-item h3 { font-size: 14px; }
+  .service-item p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+  .price-card { background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; }
+  .price-tag { font-size: 13px; color: var(--text-secondary); }
+  .price-amount { font-size: 34px; font-weight: 600; margin: 0.5rem 0; letter-spacing: -1px; }
+  .include-list { display: flex; flex-direction: column; gap: 8px; margin-top: 1rem; border-top: 0.5px solid var(--border); padding-top: 1rem; }
+  .include-item { display: flex; gap: 8px; font-size: 14px; color: var(--text-secondary); align-items: flex-start; }
+  .include-item i { color: var(--text-success); font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+
+  .steps { display: flex; flex-direction: column; margin-top: 1rem; position: relative; }
+  .step { display: flex; gap: 16px; padding-bottom: 1.5rem; position: relative; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--bg-accent); color: var(--text-accent); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; position: relative; z-index: 1; }
+  .step-content { padding-top: 4px; flex: 1; }
+  .step-content h3 { font-size: 14px; margin-bottom: 3px; }
+  .step-content p { font-size: 13px; color: var(--text-muted); }
+  .step:not(:last-child)::before { content: ''; position: absolute; left: 13px; top: 28px; width: 1px; height: calc(100% - 10px); background: var(--border-strong); }
+
+  .schedule-box { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 1rem; }
+  .schedule-item { background: var(--surface-1); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem; }
+  .schedule-item .label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+  .schedule-item .value { font-size: 14px; font-weight: 500; }
+
+  .cta-area { margin-top: 1rem; }
+
+  .pay-btn {
+    display: block;
+    text-align: center;
+    background: #FFCD00;
+    color: #3A1D00;
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    width: 100%;
+    letter-spacing: -0.2px;
+    transition: opacity 0.15s;
+  }
+  .pay-btn:hover { opacity: 0.88; }
+
+  .cta-secondary {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: var(--text-accent);
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    text-decoration: none;
+    border: 0.5px solid var(--border-accent);
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.15s;
+  }
+  .cta-secondary:hover { background: var(--bg-accent); }
+
+  .trial-note { font-size: 13px; color: var(--text-muted); text-align: center; margin-top: 10px; }
+
+  @media (max-width: 480px) {
+    .reason-grid { grid-template-columns: 1fr; }
+    .schedule-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="tag">2026 4분기 · 10월 12일 ~ 16일</span>
+  <div class="h-main">이유서 말고도 신경 쓸 게<br>너무 많으시잖아요.</div>
+  <div class="h-bridge">그래서 이유서 혼자 쓰다가 탈락하는 거예요.</div>
+  <p class="h-sub">이것만큼은 맡겨버리세요.<br>일본에 사는 사람이 직접 써드립니다. 이유서부터 일본어 번역까지.</p>
+
+  <hr class="divider">
+
+  <h2>이런 분들을 위한 서비스예요</h2>
+  <ul class="check-list">
+    <li><i class="ti ti-circle-check"></i>이유서에 뭘 써야 할지 모르겠는 분</li>
+    <li><i class="ti ti-circle-check"></i>"일본이 좋아서"밖에 생각이 안 나는 분</li>
+    <li><i class="ti ti-circle-check"></i>직접 작성했다가 탈락 경험이 있는 분</li>
+    <li><i class="ti ti-circle-check"></i>일본어 번역까지 한 번에 해결하고 싶은 분</li>
+    <li><i class="ti ti-circle-check"></i>제출 마감 전에 확실하게 끝내고 싶은 분</li>
+  </ul>
+
+  <hr class="divider">
+
+  <h2>왜 이유서가 어려운가</h2>
+  <p style="margin-bottom:1rem">일본 대사관 심사관은 이 세 가지를 봅니다. 대부분 하나가 빠져서 탈락해요.</p>
+  <div class="reason-grid">
+    <div class="reason-card">
+      <div class="reason-num">01</div>
+      <h3>왜 일본인가</h3>
+      <p>"일본이 좋아서"는 탈락 각도. 본인만의 구체적 계기가 있어야 해요.</p>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">02</div>
+      <h3>구체적인 계획</h3>
+      <p>지명, 행사명, 시기가 없으면 계획이 없는 것으로 봐요.</p>
+    </div>
+    <div class="reason-card">
+      <div class="reason-num">03</div>
+      <h3>1년이 필요한 이유</h3>
+      <p>워홀 경험이 귀국 후 내 삶과 어떻게 이어지는지. 이 연결이 없으면 "왜 1년인가"에 답을 못 한 거예요.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>이 서비스가 하는 것</h2>
+  <div class="service-list">
+    <div class="service-item">
+      <i class="ti ti-bulb"></i>
+      <div><h3>이유서 방향 설계</h3><p>본인 경험에서 합격 각도를 찾아내요. 뭘 써야 할지 모르는 분도 괜찮아요.</p></div>
+    </div>
+    <div class="service-item">
+      <i class="ti ti-pencil"></i>
+      <div><h3>초안 작성 + 피드백</h3><p>직접 쓰신 초안을 기준으로 수정하거나, 처음부터 같이 만들어요. 수정 횟수 제한 없어요.</p></div>
+    </div>
+    <div class="service-item">
+      <i class="ti ti-file-check"></i>
+      <div><h3>이유서·계획서 완성본 작성</h3><p>대사관 기준에 맞춘 한국어 완성본을 만들어요.</p></div>
+    </div>
+    <div class="service-item">
+      <i class="ti ti-language"></i>
+      <div><h3>일본어 번역 (PDF 포함)</h3><p>번역기가 아닌 자연스러운 일본어로. 대사관 제출용 PDF 파일로 드려요.</p></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>가격</h2>
+  <div class="price-card">
+    <div class="price-tag">1인 기준 · 전체 포함</div>
+    <div class="price-amount">10만원</div>
+    <div class="include-list">
+      <div class="include-item"><i class="ti ti-check"></i>이유서 방향 설계 + 초안 피드백</div>
+      <div class="include-item"><i class="ti ti-check"></i>이유서·계획서 완성본 작성</div>
+      <div class="include-item"><i class="ti ti-check"></i>일본어 번역 (PDF 2종)</div>
+      <div class="include-item"><i class="ti ti-check"></i>수정 무제한 (완성까지)</div>
+      <div class="include-item"><i class="ti ti-check"></i>추가 비용 없음</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>진행 순서</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content"><h3>결제 완료</h3><p>아래 카카오페이 버튼으로 결제하시면 돼요</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content"><h3>신청 폼 작성</h3><p>본인 배경 + 일본에 관심 갖게 된 계기를 적어주세요</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content"><h3>브리핑 메일 발송</h3><p>이유서 방향을 메일로 정리해서 보내드려요</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content"><h3>초안 작성 + 피드백</h3><p>수정 횟수 제한 없이 완성까지 같이 가요</p></div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content"><h3>일본어 번역 완성 · PDF 전달</h3><p>대사관 제출용 파일로 드려요</p></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>4분기 신청 일정</h2>
+  <div class="schedule-box">
+    <div class="schedule-item">
+      <div class="label">신청 기간</div>
+      <div class="value">10월 12일(월) ~ 16일(금)</div>
+    </div>
+    <div class="schedule-item">
+      <div class="label">결과 발표</div>
+      <div class="value">11월 24일(화)</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="cta-area">
+    <a class="pay-btn" href="https://qr.kakaopay.com/FeKpgmxtDc35009421" target="_blank">💛 카카오페이로 결제하기</a>
+    <a class="cta-secondary" href="https://jolly-sting-64c.notion.site/2-37aec2fa876380f3b4c3f875d40bd91b?source=copy_link" target="_blank">무료 체험 먼저 해보기</a>
+    <p class="trial-note">체험 후 결제 결정하셔도 돼요</p>
+  </div>
+
+</div>
+</body>
+</html>
